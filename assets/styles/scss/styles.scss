@@ -1,0 +1,83 @@
+// RESETS
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+
+    @extend .inter-font;
+}
+
+
+
+// FONTS
+.inter-font {
+    // <weight>: Use a value from 100 to 900
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings:
+        "slnt" 0;
+}
+
+
+
+.header {
+    height: 8vh;
+    padding: 30px 150px;
+
+    background-color: white;
+    // border-bottom: 1px solid black;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &_logo {
+        height: 100%;
+
+        img {
+            max-height: 100%;
+            width: auto;
+        }
+    }
+
+    &_nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: nowrap;
+        gap: 50px;
+
+        &_link {
+            color: #000000;
+            text-decoration: none;
+        }
+        &_link--btnBlackFill {
+            @extend .header_nav_link;
+            color: white;
+        }
+    }
+}
+
+
+
+.main {
+    width: 100%;
+    min-height: 100vh;
+
+    background-color: #000000;
+}
+
+
+
+// OOCSS
+.button--blackFill {
+    padding: .75em 1.5em;
+
+    background-color: #000000;
+    color: white;
+}
