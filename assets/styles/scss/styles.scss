@@ -7,8 +7,9 @@ html, body {
     margin: 0;
     padding: 0;
     width: 100%;
-
     z-index: 0;
+
+    background-color: #000;
 
     @extend .inter-font;
     color: white;
@@ -184,7 +185,7 @@ html, body {
 
 
 .home_findModel {
-    padding: 20%;
+    padding: 75px 20%;
     width: 100%;
 
     display: flex;
@@ -317,6 +318,7 @@ html, body {
         
         a {
             min-width: 100%;
+            min-height: 100%;
             padding: 1em 2em;
 
             display: flex;
@@ -337,10 +339,194 @@ html, body {
 
 
 
+.home_beginners {
+    margin-top: 100px;
+
+    h2 {
+        text-align: center;
+        margin-block: 2em;
+    }
+
+    &_imgWrapper, &_text {
+        margin-inline: 15%;
+    }
+
+    &_imgWrapper {
+        img {
+            max-width: 100%;
+        }
+    }
+
+    &_text {
+        @extend .home_register_blurDiv;
+        margin-top: 15px;
+
+        &::before, &::after {
+            display: none;
+        }
+
+        p > span {
+            font-weight: 700;
+            line-height: 2em;
+        }
+    }
+}
+
+
+
+.home_customersOpinion {
+    margin-top: 200px;
+
+    h2 {
+        text-align: center;
+    }
+
+    &_slider {
+        margin-top: 75px;
+        margin-inline: 10%;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 25px;
+    }
+
+    &_item {
+        padding: 2em;
+
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+
+        border-radius: 10px;
+        border: 1px solid lightgrey;
+        background-color: rgba(54, 54, 54, 0.295);
+
+        &_header {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 2em;
+
+            img {
+                max-width: 75px;
+            }
+        }
+    }
+}
+
+
+
+.home_contact {
+    margin-block: 200px;
+
+    &_wrapper {
+        margin-inline: 15%;
+
+        display: flex;
+        justify-content: space-between;
+        gap: 25px;
+    }
+
+    &_img {
+        width: 100%;
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    }
+
+    &--rightCol {
+        min-width: 50%;
+
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        gap: 25px;
+    }
+    &_title {
+        padding-block: 2.5em;
+
+        border-radius: 15px;
+        border: 1px solid white;
+        background-color: rgba(54, 54, 54, 0.295);
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 1.5em;
+
+        text-align: center;
+
+        h2 {
+            margin: 0;
+        }
+    }
+
+    &_form {
+        height: 100%;
+        padding: 1.5em;
+
+        display: flex;
+        flex-direction: column;
+        gap: .5rem;
+
+        border-radius: 15px;
+        border: 1px solid white;
+        background-color: rgba(54, 54, 54, 0.295);
+
+        > * {
+            display: block;
+            padding: .75rem;
+
+            border-radius: 5px;
+            background-color: transparent;
+
+            color: white;
+        }
+        textarea {
+            height: 100%;
+        }
+        button {
+            @extend .button--purpleGradient;
+        }
+    }
+}
+
+
+
+.footer {
+    padding: 100px 200px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 25px;
+
+    background: rgb(211,241,203);
+    background: linear-gradient(90deg, rgba(211,241,203,1) 0%, rgba(189,148,252,1) 100%);
+
+    a {
+        text-decoration: none;
+        color: black;
+    }
+
+    &_col {
+        display: inherit;
+        flex-direction: column;
+        gap: 2em;
+    }
+}
 
 
 
 // OOCSS
+.bold {
+    font-weight: 600;
+}
+
 .button--blackFill {
     padding: .75em 1.5em;
     
