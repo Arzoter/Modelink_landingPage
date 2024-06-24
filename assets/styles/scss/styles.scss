@@ -31,7 +31,7 @@ html, body {
 
 .header {
     height: 8vh;
-    padding: 30px 150px;
+    padding: 13px 150px;
     position: fixed;
     top: 0;
     left: 0;
@@ -517,6 +517,28 @@ html, body {
         display: inherit;
         flex-direction: column;
         gap: 2em;
+    }
+}
+
+
+
+
+
+.comingSoon {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    &_imgWrapper {
+        max-width: 50%;
+        margin-top: 100px;
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
     }
 }
 
