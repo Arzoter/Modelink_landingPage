@@ -8,7 +8,10 @@ html, body {
     padding: 0;
     width: 100%;
 
+    z-index: 0;
+
     @extend .inter-font;
+    color: white;
 }
 
 
@@ -28,6 +31,11 @@ html, body {
 .header {
     height: 8vh;
     padding: 30px 150px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
 
     background-color: white;
     // border-bottom: 1px solid black;
@@ -72,12 +80,282 @@ html, body {
     background-color: #000000;
 }
 
+.home_intro {
+    margin-top: 0;
+    &_logo {
+        padding-top: 25vh;
+        padding-inline: 30%;
+        padding-bottom: 100PX;
+
+        display: flex;
+        flex-direction: column;
+
+        background: rgb(0,0,0);
+        background: linear-gradient(167deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 75%, rgba(39,44,38,1) 100%);
+        
+        h1 {
+            font-weight: 300;
+            font-size: 1.25rem;
+        }
+
+        &_imgWrapper > img {
+            max-width: 100%;
+            height: auto;
+        }
+    }
+
+    &_description {
+        padding-block: 200px;
+        padding-inline: 200px;
+        text-align: center;
+
+        h2 {
+            font-weight: 400;
+        }
+
+        background: rgb(39,44,38);
+        background: linear-gradient(30deg, rgba(39,44,38,1) 0%, rgba(0,0,0,1) 35%, rgba(0,0,0,1) 60%, rgba(39,44,38,1) 100%);
+    }
+}
+
+
+
+.home_register {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(157deg, rgba(39,44,38,1) 0%, rgba(0,0,0,1) 29%, rgba(0,0,0,1) 100%);
+
+    &_blurDiv {
+        margin-top: 200px;
+        margin-bottom: 100px;
+        margin-inline: 25%;
+        padding-block: 50px;
+        padding-inline: 7%;
+        position: relative;
+        z-index: 2;
+        
+        border-radius: 15px;
+        background-color: rgb(66, 66, 66);
+        // filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgb(179, 179, 179);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+        gap: 2rem;
+
+        text-align: center;
+
+        &::before, &::after {
+            content: '';
+            position: absolute;
+            background-position: center;
+            background-size: contain;
+            z-index: 1;
+        }
+        &::before {
+            $bubble1size: 100px;
+            top: -(calc($bubble1size/10));
+            left: -(calc($bubble1size/2));
+            width: $bubble1size;
+            height: $bubble1size;
+            background-image: url(../img/bubble.png);
+        }
+        &::after {
+            $bubble2size: 175px;
+            bottom: -(calc($bubble2size/10));
+            right: -(calc($bubble2size/2));
+            width: $bubble2size;
+            height: $bubble2size;
+            background-image: url(../img/bubble.png);
+        }
+
+        h2 {
+            margin: 0;
+        }
+    }
+}
+
+
+
+.home_findModel {
+    padding: 20%;
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 25px;
+
+    &--leftCol, &--rightCol {
+        width: 50%;
+
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    &_imgWrapper {
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    }
+
+    &_btn {
+        height: 100%;
+        min-height: max-content;
+        padding: 3em 6em;
+        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-grow: 1; /* Prendre toute la hauteur disponible */
+
+        border-radius: 15px;
+        background: linear-gradient(108.42deg, rgba(211, 241, 203, 0.4) -4.82%, rgba(255, 253, 253, 0.2) 60.12%, rgba(189, 148, 252, 0.4) 106.42%);
+        border: 1px solid white;
+        
+        text-decoration: none;
+        
+        h2 {
+            margin: 0;
+
+            font-size: 1.4rem;
+            font-weight: 500;
+            color: white;
+            text-align: center;
+        }
+    }
+}
+
+
+
+.home_whyModelink {
+    padding: 5% 10%;
+    background-color: #000; // Ajustez la couleur de fond si nécessaire
+
+    &_grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(9, 1fr);
+        gap: 15px;
+    }
+
+    &_image {
+        grid-column: 1 / 2;
+        grid-row: 1 / 7;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+    }
+
+    &_item {
+        padding: 2em;
+        background: rgba(54, 54, 54, 0.295);
+        border-radius: 15px;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+
+        h3 {
+            margin-top: 0;
+            margin-bottom: 1em;
+        }
+
+        p {
+            margin: 0;
+        }
+    }
+
+    &_item:nth-child(2) {
+        // = gestion facile des projets
+        grid-column: 2 / 4;
+        grid-row: 1 / 4;
+    }
+
+    &_item:nth-child(3) {
+        // = pourquoi modelink
+        grid-column: 2 / 3;
+        grid-row: 4 / 7;
+
+        h2 {
+            font-weight: 900;
+        }
+    }
+
+    &_item:nth-child(4) {
+        // = dispos flexibles
+        grid-column: 3 / 4;
+        grid-row: 4 / 9;
+    }
+
+    &_item:nth-child(5) {
+        // = opportunités de travail
+        grid-column: 1 / 3;
+        grid-row: 7 / 10;
+    }
+
+    &_button {
+        grid-column: 3 / 4;
+        grid-row: 9 / 10;
+        
+        
+        a {
+            min-width: 100%;
+            padding: 1em 2em;
+
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+
+            border-radius: 15px;
+            background: linear-gradient(108.42deg, rgba(211, 241, 203, 0.4) -4.82%, rgba(255, 253, 253, 0.2) 60.12%, rgba(189, 148, 252, 0.4) 106.42%);
+            border: 1px solid white;
+
+            text-decoration: none;
+            color: white;
+            font-size: 1.2rem;
+            text-align: center;
+        }
+    }
+}
+
+
+
+
 
 
 // OOCSS
 .button--blackFill {
     padding: .75em 1.5em;
-
+    
     background-color: #000000;
     color: white;
+}
+
+.button--purpleGradient {
+    padding: .75em 2em;
+    border-radius: 10px;
+
+    background: rgb(189,148,252);
+    background: linear-gradient(143deg, rgba(189,148,252,1) 0%, rgba(189,148,252,0.20211834733893552) 100%);
+    border: 1px solid rgb(179, 179, 179);
+
+    color: white;
+    text-decoration: none;
 }
